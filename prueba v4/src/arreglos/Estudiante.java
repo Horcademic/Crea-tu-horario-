@@ -2,6 +2,8 @@ package arreglos;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+//En esta clase basicamente nos enfocamos en crear los atributos que poseera cada estudiante
+
 import org.apache.poi.hssf.usermodel.HSSFCell;
 public class Estudiante {
 	public Estudiante() {
@@ -11,17 +13,17 @@ public class Estudiante {
 	int id;
 	int CreditosAprobados;
 	ArrayList<Materia> MateriasAprobadas;
-	String contraseña;
+	String contraseÃ±a;
 	
 
 	
-	public Estudiante(String nombre, int id, int creditosAprobados,String contraseña, ArrayList<Materia> materiasAprobadas) {
+	public Estudiante(String nombre, int id, int creditosAprobados,String contraseÃ±a, ArrayList<Materia> materiasAprobadas) {
 		super();
 		this.nombre = nombre;
 		this.id = id;
 		CreditosAprobados = creditosAprobados;
 		MateriasAprobadas = materiasAprobadas;
-		this.contraseña=contraseña;
+		this.contraseÃ±a=contraseÃ±a;
 
 	}
 	public Estudiante(String nombre, int id) {
