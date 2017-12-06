@@ -48,7 +48,7 @@ public static Materia EvaluarMateria(Materia Materia, ArrayList<Materia>listaMat
 		for (int u=0;u<Prerrequisitos.size();u++) {
 			Integer a1=Prerrequisitos.get(u);
 			Materia a= BaseMaterias.get(a1);
-		if(listaMateriaAprobadas.contains(a)) {
+			if(listaMateriaAprobadas.contains(a)) {
 					suma++;
 				
 			}
@@ -100,7 +100,7 @@ public static void LectorEstudiantes() throws Exception {
 			Iterator<Cell> cells = row.cellIterator();
 			String nombre = (cells.next()).getStringCellValue();
 			if (nombre!=""){
-				String contraseña = (cells.next()).getStringCellValue();
+				String contraseÃ±a = (cells.next()).getStringCellValue();
 				Integer Id =  new Integer( (int) ((XSSFCell) cells.next()).getNumericCellValue() );
 				int CreditosAprobados = (int)((XSSFCell) cells.next()).getNumericCellValue();
 				
@@ -111,9 +111,9 @@ public static void LectorEstudiantes() throws Exception {
 					 Materia MateriaAprobada=BaseMaterias.get(codigos);	
 					 MateriasAprobadas.add(MateriaAprobada);
 					 } 
-				Estudiante Codigo=new Estudiante(nombre,Id,CreditosAprobados,contraseña,MateriasAprobadas);
+				Estudiante Codigo=new Estudiante(nombre,Id,CreditosAprobados,contraseÃ±a,MateriasAprobadas);
 				BaseDatos.put(Id, Codigo);
-				BaseUsuarios.put(Id, contraseña);
+				BaseUsuarios.put(Id, contraseÃ±a);
 			}
 		}
 		workbook.close();
