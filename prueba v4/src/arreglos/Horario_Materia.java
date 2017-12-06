@@ -1,5 +1,7 @@
 package arreglos;
 
+
+// Con esta clase se logro crear una lista para que esta almacene lo que el metodo del lector de archivo de horario leia.
 public class Horario_Materia extends Materia{
 	public Horario_Materia() {
 		super();
