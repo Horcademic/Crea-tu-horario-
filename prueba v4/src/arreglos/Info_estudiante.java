@@ -27,7 +27,7 @@ public class Info_estudiante  {
 	public static HashMap<Integer,Materia> BaseMaterias;
 	public static HashMap<Integer,String> BaseUsuarios;
 	
-
+// Hashmaps
 public static ArrayList<Materia> getLista_Materias() {
 		return Lista_Materias;
 	}
@@ -40,6 +40,8 @@ public static ArrayList<Materia> getLista_Materias() {
 	public static HashMap<Integer, String> getBaseUsuarios() {
 		return BaseUsuarios;
 	}
+	
+// Con este metodo se busca definir si una materia que el estudiante aun no ha visto la puede cursar.
 public static Materia EvaluarMateria(Materia Materia, ArrayList<Materia>listaMateriaAprobadas) {
 	ArrayList<Integer> Prerrequisitos= Materia.getPrerrequisitos();
 	Materia m=null;
@@ -65,7 +67,7 @@ public static Materia EvaluarMateria(Materia Materia, ArrayList<Materia>listaMat
 	
 
 	
-
+// Este metodo nos da una una lista la cual esta compuesta por materias que el estudiante puede llegar a ver
 public static ArrayList<Materia> Lista_materias_cursar(Estudiante estudiante){
 	ArrayList<Materia> listaCursar=new ArrayList<Materia>() ;
 	ArrayList<Materia>listaMateriaAprobadas=estudiante.getMateriasAprobadas();
@@ -84,7 +86,7 @@ public static ArrayList<Materia> Lista_materias_cursar(Estudiante estudiante){
 
 
 
-
+//Con este metodo estamos leyendo el archivo baseEstudiantes
 public static void LectorEstudiantes() throws Exception {
 	BaseDatos=new HashMap<Integer,Estudiante>();
 	BaseUsuarios=new  HashMap<Integer,String> ();
@@ -112,6 +114,7 @@ public static void LectorEstudiantes() throws Exception {
 					 MateriasAprobadas.add(MateriaAprobada);
 					 } 
 				Estudiante Codigo=new Estudiante(nombre,Id,CreditosAprobados,contraseña,MateriasAprobadas);
+				//Añadimos la llave y el valor al hashmap BaseDatos y al BaseUsuarios
 				BaseDatos.put(Id, Codigo);
 				BaseUsuarios.put(Id, contraseña);
 			}
@@ -126,7 +129,7 @@ public static void LectorEstudiantes() throws Exception {
 		}
 }
 
-
+// Con este metodo leemos el archivo baseMaterias
 public static void LectorMaterias() throws Exception {
 	Lista_Materias=new ArrayList<Materia>();
 	BaseMaterias= new HashMap<Integer,Materia>(); 
@@ -166,6 +169,8 @@ public static void LectorMaterias() throws Exception {
 		}
 		}
 }
+
+//Creamos un constructor de esta clase el cual utilizaremos en otras clases, ademas corremos los metodos de esta clase para crear los objetos con los que trabajaremos
 public Info_estudiante() {
 	super();
 	try {
@@ -178,7 +183,7 @@ public Info_estudiante() {
 	}
 	
 }
-
+//Leemos el archivo baseHorarios
 public static void LectorHorarios() throws Exception {
 
 	String filename = "C:\\Users\\Julian\\Desktop\\prueba v4\\data\\baseHorarios.xlsx";
