@@ -1,5 +1,6 @@
 package arreglos;
 
+// basicamente esta clase nos permitira conectar la informacion del estudiante con las demas ventanas ya que aqui se diferencia cada estudiante por su ID y contraseña
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -24,7 +25,7 @@ import java.awt.event.KeyEvent;
 
 public class VentanaUsuario extends JFrame {
 	
-	
+	// Creamos un objeto de la clase InfoEstudiante
 	Info_estudiante IF=new Info_estudiante();
 	private JPanel contentPane;
 	private JTextField usuariotxt;
@@ -96,16 +97,16 @@ public class VentanaUsuario extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 			Integer usuario=Integer.valueOf(usuariotxt.getText())	;
-			String Contrase�a=IF.getBaseUsuarios().get(usuario);
+			String Contraseña=IF.getBaseUsuarios().get(usuario);
 			Estudiante estudiante=IF.getBaseDatos().get(usuario);
 			String pass= new String(password.getPassword());
-			if(pass.equals(Contrase�a)) {
+			if(pass.equals(Contraseña)) {
 				Ventana_Siar S1=new Ventana_Siar(estudiante);
 				S1.setVisible(true);
 				dispose();
 			}
 			else {
-				JOptionPane.showMessageDialog(null, "usurarios o contrase�a incorrecta");
+				JOptionPane.showMessageDialog(null, "usurarios o contraseña incorrecta");
 			}
 			}
 		});
